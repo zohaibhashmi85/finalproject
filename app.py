@@ -110,7 +110,7 @@ def further():
         
         prediction = rfmodel.predict(input_variables)[0]
         if prediction == 0:
-            second = "No Heart Disease, But at Risk!!"
+            second = "No Heart Disease!"
 
         else:
             second = "You may have Heart Disease!"
