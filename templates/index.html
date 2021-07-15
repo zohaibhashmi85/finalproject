@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  
+ 
+<head>
+  <meta charset="UTF-8">
+  <title>CVD Analysis</title>
+  <link rel="stylesheet" href="/static/style1.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+
+
+</head>
+<body>
+  
+  <!-- Header -->
+  <section id="header">
+    <div class="header container">
+      <div class="nav-bar">
+        <div class="brand">
+          <a href="#hero">
+            <h1><span>C</span>V <span>D</span>isease <span>A</span>nalysis</h1>          
+          </a>
+        </div>
+        <div class="nav-list">
+          <div class="hamburger">
+            <div class="bar"></div>
+          </div>
+          <ul>
+            <li><a href="#hero" data-after="Home">Home</a></li>
+            <li><a href="#services" data-after="Service">Insights</a></li>
+            <li><a href="#projects" data-after="Projects">Are You At Risk?</a></li>
+            <li><a href="#contact" data-after="Contact">Contacts</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Header -->
+
+
+  <!-- Hero Section  -->
+  <section id="hero">
+    <div class="hero container">
+      <div class="col-md-4">
+        <h1>It's <span></span></h1>
+        <h1>all about <span></span></h1>
+        <h1>Heart <span></span></h1>
+        <a href="#projects" type="button" class="cta">Prediction</a>
+      </div>
+      <div class="col-md-2">
+       </div>
+      <div class="col-md-6">
+        <img 
+        src="/static/heart-beat.gif">
+        
+      </div>
+    </div>
+  </section>
+  <!-- End Hero Section  -->
+
+  <!-- Service Section -->
+  <section id="services">
+    <div class="services container">
+      
+      
+      <div class='tableauPlaceholder' id='viz1626166975162' style='position: relative'>
+        <noscript>
+            <a href='#'>
+                <img alt='Analysis of Cardiovascular Disease Data: Who are the patients? ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project-3_16259603538000&#47;Dashboard2&#47;1_rss.png' style='border: none' />
+            </a>
+        </noscript>
+        <object class='tableauViz'  style='display:none;'>
+            <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+             <param name='embed_code_version' value='3' /> <param name='site_root' value='' />
+             <param name='name' value='Project-3_16259603538000&#47;Dashboard2' />
+             <param name='tabs' value='no' /><param name='toolbar' value='yes' />
+             <param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Pr&#47;Project-3_16259603538000&#47;Dashboard2&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' />
+             <param name='display_overlay' value='yes' /><param name='display_count' value='yes' />
+             <param name='language' value='en-US' /></object></div>                
+             <script type='text/javascript'>                   
+              var divElement = document.getElementById('viz1626166975162');   
+              var vizElement = divElement.getElementsByTagName('object')[0];                    
+              if ( divElement.offsetWidth > 800 ) 
+              { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} 
+              else if ( divElement.offsetWidth > 500 ) 
+              { vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';} 
+              else { vizElement.style.width='100%';vizElement.style.height='2227px';}                    
+               var scriptElement = document.createElement('script');                    
+               scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                   
+               vizElement.parentNode.insertBefore(scriptElement, vizElement);              
+            </script>
+    </div>
+  </section>
+  <!-- End Service Section -->
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <div class="projects container">
+      <div class="projects-header">
+        <h1 class="section-title">Predict <span>Heart Disease</span> Risk</h1>
+      </div>
+      
+      <div class="all-projects">
+        <form action="{{ url_for('main') }}" method="POST">
+          <fieldset>
+              <legend>Input values:</legend>
+              <br>Age (Years):
+
+              <select name="age">  
+                <option value="1" selected="selected">Select</option>
+                <option value="10" >0-15</option>
+                <option  value="20">16-25</option>
+                <option value="30" >26-35</option>
+                <option  value="40">36-45</option>
+                <option value="50" >46-55</option>
+                <option  value="60">56-65</option>
+                <option value="70" >Above 65</option>
+                
+                </select>
+              <!-- <input name="age" type="number" required min="1" max="99"> -->
+              <br>
+              <br> Gender:
+      
+              <select name="gender"> 
+                  <option value="1" selected="selected">Select</option>
+                  <option value="1" >Women</option>
+                  <option  value="2">Men</option>
+                  
+                  </select>
+      
+              <!-- <input name="gender" type="number" required> -->
+              <br>
+              <br>Height (cm):
+              <select name="height"> 
+                
+                  <option value="145" selected="selected">Select</option>
+                  <option value="55" >1-55</option>
+                  <option  value="65">56-75</option>
+                  <option value="85" >76-95</option>
+                  <option  value="105">96-115</option>
+                  <option value="125" >116-135</option>
+                  <option  value="145">136-155</option>
+                  <option value="165">156-175</option>
+                  <option value="185">176-195</option>
+                  <option value="205">Above 195</option>
+                  
+                  </select>
+              <!-- <input name="height" type="number" required> -->
+              <br>
+              <br> Weight(kg):
+
+              <select name="weight"> 
+                
+                <option value="65" selected="selected">Select</option>
+                <option value="10" >1-15</option>
+                <option  value="25">16-35</option>
+                <option value="45" >36-55</option>
+                <option  value="65">56-75</option>
+                <option value="85" >76-95</option>
+                <option  value="105">96-115</option>
+                <option value="125" >116-135</option>
+                <option  value="145">136-155</option>
+                <option value="165">156-175</option>
+                <option value="185">176-195</option>
+                <option value="205">Above 195</option>
+                
+                </select>
+              <!-- <input name="weight" type="number" required> -->
+              <br>
+              <br> Systolic BP(mmHg):
+
+              <select name="bp_hi"> 
+                
+                <option value="110" selected="selected">Select</option>
+                <option value="40" >Extremely Low (below 60)</option>
+                <option  value="70">Very Low (60 to 80)</option>
+                <option value="90" >Low (80 to 100)</option>
+                <option  value="110">Normal (100-120)</option>
+                <option  value="135">Normal-High (120-140)</option>
+                <option value="150" >High (140-160)</option>
+                <option  value="170">Very High (160-180)</option>
+                <option value="190">Extremly High (180-200)</option>
+                <option value="220">Emergency (Above 200)</option>
+            
+                </select>
+              <!-- <input name="bp_hi" type="number" required> -->
+              <br>
+              <br> Diastolic BP(mmHg):
+              <select name="bp_lo"> 
+                
+                <option value="75" selected="selected">Select</option>
+                <option value="10" >Extremely Low (below 20)</option>
+                <option  value="30">Very Low (20 to 40)</option>
+                <option value="50" >Low (40 to 60)</option>
+                <option value="75" >Normal (60-80)</option>
+                <option  value="85">Normal-High (80-90)</option>
+                <option value="95" >High (90-100)</option>
+                <option  value="105">Very High (100-110)</option>
+                <option value="115">Extremly High (110-120)</option>
+                <option value="150">Emergency (Above 120)</option>
+            
+                </select>
+              <!-- <input name="bp_lo" type="number" required> -->
+              <br>
+              <br>Cholesterol Levels:
+      
+              <select name="cholesterol"> 
+                  <option value="1" selected="selected">Select </option>
+                  <option value="1" >Ideal</option>
+                  <option  value="2">Borderline</option>
+                  <option  value="3">High</option>
+                  
+                  </select>
+              <!-- <input name="cholesterol" type="number" required min="1" max="3"> -->
+              <br>
+              <br> Blood Sugar Levels
+      
+              <select name="gluc" required> 
+                  <option value ="1" selected="selected">Select </option>
+                  <option value="1" >Ideal</option>
+                  <option  value="2">Borderline</option>
+                  <option  value="3">High</option>
+              </select>
+              <!-- <input name="gluc" type="number" required> -->
+              <br>
+              <br> Are you the Smoker?
+      
+              <select name="smoke" required> 
+                  <option value="0" selected="selected">Select </option>
+                  <option value="0" >No</option>
+                  <option  value="1">Yes</option>
+                  
+              </select>
+              <!-- <input name="smoke" type="number" required> -->
+              <br>
+              <br> Do you drink Alcohol?
+              <select name="alco" required> 
+                  <option value ="0" selected="selected">Select </option>
+                  <option value="0" >No</option>
+                  <option  value="1">Yes</option>
+                  
+              </select>
+              <!-- <input name="alco" type="number" required> -->
+              <br>
+              <br> Do you Exercise?
+              <select name="active" required> 
+                  <option value ="0" selected="selected">Select </option>
+                  <option value="0" >No</option>
+                  <option  value="1">Yes</option>
+                  
+              </select>
+              <!-- <input name="active" type="number" required> -->
+              <br>
+              <br>
+              <input type="submit">
+          </fieldset>
+      </form>
+      
+      </div>
+    </div>
+  </section>
+  <!-- End Projects Section -->
+
+  
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="contact container">
+      <div>
+        <h1 class="section-title">Project <span>Team</span></h1>
+      </div>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="icon"><img src="/static/zohaib.png" /></div>
+          <div class="contact-info">
+            <h1>Zohaib Hashmi</h1>
+            <h2>M: 0434016612</h2>
+            <h2>E: zohaibhashmi@gmail.com</h2>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon"><img src="/static/snehitha.png" /></div>
+          <div class="contact-info">
+            <h1>Snehitha Soma</h1>
+            <h2>M: 0468327381</h2>
+            <h2>E: snehitha.soma99@gmail.com</h2>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon"><img src="/static/beth.png" /></div>
+          <div class="contact-info">
+            <h1>Beth Scott</h1>
+            <h2>M: 0448109462</h2>
+            <h2>E: bethchapmanscott@gmail.com</h2>
+          </div>
+        </div>
+      </div>
+      <div></div>
+      <br>
+      <br>
+      
+   
+        
+        <div class="contact-items">
+          <div class="contact-item">
+            <div class="icon"><img src="/static/france.png" /></div>
+            <div class="contact-info">
+              <h1>France Guieb</h1>
+              <h2>M: 0433179878</h2>
+              <h2>E: guieb.france@gmail.com</h2>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="icon"><img src="/static/anjana.png" /></div>
+            <div class="contact-info">
+              <h1>Anjana Bandara</h1>
+              <h2>M: 0414048548</h2>
+              <h2>E: ajaybandara06@gmail.com</h2>
+            </div>
+          </div>
+          
+        </div>
+      
+    
+  </section>
+  <!-- End Contact Section -->
+
+  <!-- Footer -->
+  <section id="footer">
+    <div class="footer container">
+      <div class="brand">
+        <h1><span>H</span>eart <span>D</span>isease <span>M</span>odel</h1>
+      </div>
+      <h2>It's all about Heart</h2>
+      
+      <p>Copyright © 2021 Monash BootCamp. All rights reserved</p>
+    </div>
+  </section>
+  <!-- End Footer -->
+  
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+  <script src="{{url_for('static', filename='app.js')}}"></script>
+
+
+
+
+
+</body>
+</html>
