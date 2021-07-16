@@ -69,7 +69,7 @@
                 <br> Gender:
         
                 <select name="sex"> 
-                    <option value="0" selected="selected">Select Gender </option>
+                    <option value="0" selected="selected">Select</option>
                     <option value="0" >Women</option>
                     <option  value="1">Men</option>
                     
@@ -78,60 +78,107 @@
                 <!-- <input name="gender" type="number" required> -->
                 <br>
                 <br>Chest Pain:
-                <input name="cp" type="number" required>
+
+                <select name="cp"> 
+                  <option value="1" selected="selected">Select</option>
+                  <option value="1" >Typical Angina</option>
+                  <option  value="2">Atypical Angina</option>   
+                  <option value="3" >Non-Anginal Pain</option>
+                  <option  value="4">Asymtomatic</option>
+                  
+                  </select>
+                <!-- <input name="cp" type="number" required> -->
                 <br>
-                <br> Resting Blood Pressure:
-                <input name="trestbps" type="number" required>
+                <br> Resting Blood Pressure (mmHG):
+                <input name="trestbps" type="number" required min="1" max="350">
                 <br>
-                <br> Serum Cholesterol:
-                <input name="chol" type="number" required>
+                <br> Serum Cholesterol (mg/dl):
+                <input name="chol" type="number" required min="1" max="800"> 
                 <br>
                 <br> Fasting Blood Sugar:
-                <input name="fbs" type="number" required>
+
+                <select name="fbs"> 
+                  <option value="0" selected="selected">Select</option>
+                  <option value="0" >Normal</option>
+                  <option  value="1">High</option>
+                  
+                  </select>
+                <!-- <input name="fbs" type="number" required> -->
                 <br>
-                <br>REST ECG:
+                <br>Resting ECG Results:
         
                 <select name="restecg"> 
-                    <option value="1" selected="selected">Select </option>
-                    <option value="1" >Ideal</option>
-                    <option  value="2">Borderline</option>
-                    <option  value="3">High</option>
+                    <option value="0" selected="selected">Select </option>
+                    <option value="0" >Normal</option>
+                    <option  value="1">Abnormal</option>
+                    <option  value="2">Hyper</option>
                     
                     </select>
                 <!-- <input name="cholesterol" type="number" required min="1" max="3"> -->
                 <br>
-                <br> Maximum Heart Rate
+                <br> Maximum Heart Rate Achieved
         
                 
-                <input name="thalach" type="number" required>
+                <input name="thalach" type="number" required min="1" max="200">
                 <br>
                 <br> Exercise Induced Angina
-        
+                <select name="exang"> 
+                  <option value="0" selected="selected">Select</option>
+                  <option value="0" >Normal</option>
+                  <option  value="1">High</option>
+                  
+                  </select>
                
-                <input name="exang" type="number" required>
+                <!-- <input name="exang" type="number" required> -->
                 <br>
-                <br> Old Peak
+                <br> <a href="https://www.hindawi.com/journals/cmmm/2017/8272091/tab1/">Old peak</a>
                
-                <input name="oldpeak" type="number" required>
+                <input name="oldpeak" type="number" required min="0" max="10">
                 <br>
-                <br> Slope
+                <br> <a href="https://www.hindawi.com/journals/cmmm/2017/8272091/tab1/">Slope</a>
+
+                <select name="slope"> 
+                  <option value="1" selected="selected">Select</option>
+                  <option value="1" >Up</option>
+                  <option  value="2">Flat</option>   
+                  <option value="3" >Down</option>
+                 
+                  
+                  </select>
                
-                <input name="slope" type="number" required>
+                <!-- <input name="slope" type="number" required> -->
                 <br>
-                <br>Number of Major Vessels
+                <br><a href="https://www.hindawi.com/journals/cmmm/2017/8272091/tab1/">Fluoroscopy</a>
+
+                <select name="ca"> 
+                  <option value="0" selected="selected">Select</option>
+                  <option value="0" >No Vessel Coloured</option>
+                  <option  value="1">1 Vessel Coloured</option>   
+                  <option value="2" >2 Vessel Coloured</option>
+                  <option  value="3">3 Vessel Coloured</option>
+                  
+                  </select>
                
-                <input name="ca" type="number" required>
+                <!-- <input name="ca" type="number" required> -->
                 <br>
                 <br>Thal
                
-                <input name="thal" type="number" required>
+                <select name="thal"> 
+                  <option value="3" selected="selected">Select</option>
+                  <option value="3" >Normal</option>
+                  <option  value="6">Fixed Defect</option>   
+                  <option value="7" >Reversible Defect</option>
+                 
+                  
+                  </select>
+                <!-- <input name="thal" type="number" required> -->
                 <br>
                 <br>
                 <input type="submit">
             </fieldset>
         </form>
         <br>
-        <h1>{{result}}</h1>
+        <!-- <h1>{{result}}</h1> -->
         
         
             
