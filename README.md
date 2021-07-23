@@ -2,7 +2,7 @@
 
 Please review our final machine learning project to follow along with the planning, progress and successful creation of our final project - Using Machine learning to predicit cardiovasular disease.
 
-Use this link to open the web-application - https://cvd-analysis.herokuapp.com/#hero.
+Use this link to open the web-application - https://cvd-analysis.herokuapp.com.
 
 Training dataset link - https://www.kaggle.com/ronitf/heart-disease-uci/metadata
 
